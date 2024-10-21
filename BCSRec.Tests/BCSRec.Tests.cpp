@@ -15,7 +15,7 @@ namespace BCSRecTests
 			int length = 10;
 			int width = 40;
 			int expected = 60;
-
+			// getPerimeter returns the value so we just want to compare it directly
 			Assert::AreEqual( expected, getPerimeter(&length, &width) );
 		}
 	};
@@ -27,7 +27,7 @@ namespace BCSRecTests
 			int length = 47;
 			int width = 32;
 			int expected = 1504;
-
+			// getArea returns the value so we just want to compare it directly
 			Assert::AreEqual( expected, getArea(&length, &width) );
 		}
 	};
@@ -41,9 +41,9 @@ namespace BCSRecTests
 			int input = 47;
 			int length = 0;
 			int expected = 47;
-
+			// setLength changes the length value directly
 			setLength(input, &length);
-
+			// compare the changed value
 			Assert::AreEqual(expected, length);
 		}
 
@@ -75,9 +75,9 @@ namespace BCSRecTests
 			int input = 47;
 			int width = 0;
 			int expected = 47;
-
-			setLength(input, &width);
-
+			// setWidth changes the length value directly
+			setWidth(input, &width);
+			// compare the changed value
 			Assert::AreEqual(expected, width);
 		}
 
@@ -86,7 +86,7 @@ namespace BCSRecTests
 			int width = 0;
 			int expected = 0;
 
-			setLength(input, &width);
+			setWidth(input, &width);
 
 			Assert::AreEqual(expected, width);
 		}
@@ -96,9 +96,10 @@ namespace BCSRecTests
 			int width = 0;
 			int expected = 0;
 
-			setLength(input, &width);
+			setWidth(input, &width);
 
 			Assert::AreEqual(expected, width);
 		}
 	};
+
 }
