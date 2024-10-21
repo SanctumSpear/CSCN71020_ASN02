@@ -32,5 +32,73 @@ namespace BCSRecTests
 		}
 	};
 
-	
+	TEST_CLASS(setLengthTests)
+	{
+	public:
+
+		TEST_METHOD(setLength_ValidInput_CorrectValue)
+		{
+			int input = 47;
+			int length = 0;
+			int expected = 47;
+
+			setLength(input, &length);
+
+			Assert::AreEqual(expected, length);
+		}
+
+		TEST_METHOD(setLength_NegativeInput_ZeroLength) {
+			int input = -13;
+			int length = 0;
+			int expected = 0;
+
+			setLength(input, &length);
+
+			Assert::AreEqual(expected, length);
+		}
+
+		TEST_METHOD(setLength_LargeInput_ZeroLength) {
+			int input = 43456;
+			int length = 0;
+			int expected = 0;
+
+			setLength(input, &length);
+
+			Assert::AreEqual(expected, length);
+		}
+	};
+
+	TEST_CLASS(setWidthTests) {
+	public:
+
+		TEST_METHOD(setWidth_ValidInput_CorrectWidth) {
+			int input = 47;
+			int width = 0;
+			int expected = 47;
+
+			setLength(input, &width);
+
+			Assert::AreEqual(expected, width);
+		}
+
+		TEST_METHOD(setWidth_NegativeInput_ZeroWidth) {
+			int input = -47;
+			int width = 0;
+			int expected = 0;
+
+			setLength(input, &width);
+
+			Assert::AreEqual(expected, width);
+		}
+
+		TEST_METHOD(setWidth_LargeInput_ZeroWidth) {
+			int input = 443;
+			int width = 0;
+			int expected = 0;
+
+			setLength(input, &width);
+
+			Assert::AreEqual(expected, width);
+		}
+	};
 }
